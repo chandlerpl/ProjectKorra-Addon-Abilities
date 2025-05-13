@@ -63,7 +63,7 @@ public class FireSpray extends FireAbility implements AddonAbility {
 		this.amount = ConfigManager.getConfig().getInt("ExtraAbilities.Hiro3.Fire.FireSpray.ParticlePerTick");
 		this.amount = 2;
 		
-		PotionEffect pe = new PotionEffect(PotionEffectType.SLOW_DIGGING, maximumTick, 100);
+		PotionEffect pe = new PotionEffect(PotionEffectType.MINING_FATIGUE, maximumTick, 100);
 		player.addPotionEffect(pe);
 		
 		if (player.getMainHand().equals(MainHand.RIGHT)) {
@@ -84,7 +84,7 @@ public class FireSpray extends FireAbility implements AddonAbility {
 			remove();
 			if (tick <= maximumTick) {
 				bPlayer.addCooldown(this);
-				player.removePotionEffect(PotionEffectType.SLOW_DIGGING);
+				player.removePotionEffect(PotionEffectType.MINING_FATIGUE);
 			}
 			return;
 		}
@@ -92,7 +92,7 @@ public class FireSpray extends FireAbility implements AddonAbility {
 		if (tick <= maximumTick) {
 			if (tick == maximumTick) {
 				bPlayer.addCooldown(this);
-				player.removePotionEffect(PotionEffectType.SLOW_DIGGING);
+				player.removePotionEffect(PotionEffectType.MINING_FATIGUE);
 			}
 			
 			if (!player.getLocation().getBlock().isLiquid()) {

@@ -106,7 +106,7 @@ public class GliderClass
           {
             public void run()
             {
-              GliderClass.getAirbendingParticles().display(GliderClass.this.player.getLocation(), 1.0F, 1.0F, 1.0F, 0.0F, 3);
+              GliderClass.getAirbendingParticles().display(GliderClass.this.player.getLocation(), 3,1.0F, 1.0F, 1.0F, 0.0F);
             }
           }.runTaskLater(ProjectKorra.plugin, i);
         }

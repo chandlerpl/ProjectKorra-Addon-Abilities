@@ -113,7 +113,7 @@ public class ComboBar extends ChiAbility implements AddonAbility, PassiveAbility
 		markRAngle = Math.toRadians(markAngle);
 		Location loc = e.getLocation().clone();
 		loc.add(markRadius * Math.cos(markRAngle), markHeight, markRadius * Math.sin(markRAngle));
-		player.spawnParticle(Particle.REDSTONE, loc, 0, -0.1, 0.9, 0);
+		player.spawnParticle(Particle.DUST, loc, 0, -0.1, 0.9, 0);
 		loc.subtract(markRadius * Math.cos(markRAngle), markHeight, markRadius * Math.sin(markRAngle));
 		
 		if (markHeight > 2) {

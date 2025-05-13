@@ -46,12 +46,12 @@ public class Segment {
 		Location currentLoc = startLoc.clone();
 		while(startLoc.distance(currentLoc) < this.length) {
 			DustOptions result = new DustOptions(Color.fromRGB(37, 53, 27), 1);
-			player.getWorld().spawnParticle(Particle.REDSTONE, currentLoc, 1, result);
+			player.getWorld().spawnParticle(Particle.DUST, currentLoc, 1, result);
 			//GeneralMethods.displayColoredParticle(currentLoc, "25351B", 0, 0, 0);
-			//player.getWorld().spawnParticle(Particle.REDSTONE, currentLoc, 0, -1, 0.9, 0);
+			//player.getWorld().spawnParticle(Particle.DUST, currentLoc, 0, -1, 0.9, 0);
 			currentLoc.add(direction);
 		};
-		//player.getWorld().spawnParticle(Particle.REDSTONE, currentLoc, 0, 1, 0, 0);
+		//player.getWorld().spawnParticle(Particle.DUST, currentLoc, 0, 1, 0, 0);
 	}
 	
 	public void follow(Location targetLocation) {

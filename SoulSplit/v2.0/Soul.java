@@ -111,8 +111,8 @@ public class Soul {
 					eyeLocLeft = l.clone().add(leftTmpVec.getX() * 0.4, 0.4, leftTmpVec.getZ() * 0.4);
 					eyeLocRight = l.clone().add(rightTmpVec.getX() * 0.4, 0.4, rightTmpVec.getZ() * 0.4);
 					DustOptions result = new DustOptions(Color.fromRGB(128, 128, 128), 1);
-					owner.spawnParticle(Particle.REDSTONE, eyeLocLeft, 1, result);
-					owner.spawnParticle(Particle.REDSTONE, eyeLocRight, 1, result);
+					owner.spawnParticle(Particle.DUST, eyeLocLeft, 1, result);
+					owner.spawnParticle(Particle.DUST, eyeLocRight, 1, result);
 				}
 			} else {
 				owner.getWorld().spawnParticle(Particle.CLOUD, tmpLoc, 0);
@@ -124,8 +124,8 @@ public class Soul {
 					Location l = tmpLoc.clone().add(dir.clone().setY(0).multiply(0.2));
 					eyeLocLeft = l.clone().add(leftTmpVec.getX() * 0.4, 0.4, leftTmpVec.getZ() * 0.4);
 					eyeLocRight = l.clone().add(rightTmpVec.getX() * 0.4, 0.4, rightTmpVec.getZ() * 0.4);
-					owner.getWorld().spawnParticle(Particle.REDSTONE, eyeLocLeft, 1, dustOptions);
-					owner.getWorld().spawnParticle(Particle.REDSTONE, eyeLocRight, 1, dustOptions);
+					owner.getWorld().spawnParticle(Particle.DUST, eyeLocLeft, 1, dustOptions);
+					owner.getWorld().spawnParticle(Particle.DUST, eyeLocRight, 1, dustOptions);
 				}
 			}
 			tmpLoc.add(0, 0.2, 0);
@@ -286,7 +286,7 @@ public class Soul {
 						Location loc = getLoc().clone().add(0, 1, 0);
 						loc.setX(loc.getX() + 1.5 * Math.cos(angle));
 						loc.setZ(loc.getZ() + 1.5 * Math.sin(angle));
-						owner.spawnParticle(Particle.REDSTONE, loc, 1, result);
+						owner.spawnParticle(Particle.DUST, loc, 1, result);
 					}
 					phase += 2;
 				}
@@ -321,7 +321,7 @@ public class Soul {
 //					if (sign != 0)
 //						particleLocations.add(loc);
 //					for (Location l : particleLocations) 
-//						owner.spawnParticle(Particle.REDSTONE, l, 0, -1, 0.9, 0);
+//						owner.spawnParticle(Particle.DUST, l, 0, -1, 0.9, 0);
 //					
 //					if (height > maxHeight) {
 //						sign = 0;
@@ -372,7 +372,7 @@ public class Soul {
 //						if (signs.get(i) != 0)
 //							particleLocations.get(i).add(loc);
 //						for (Location l : particleLocations.get(i))
-//							owner.spawnParticle(Particle.REDSTONE, l, 0, -1, 0.9, 0);
+//							owner.spawnParticle(Particle.DUST, l, 0, -1, 0.9, 0);
 //					}
 //					
 //					for (int i = 0; i < amount; i++) {
@@ -424,7 +424,7 @@ public class Soul {
 						Location loc = getLoc().clone().add(0, heights.get(i), 0);
 						loc.setX(loc.getX() + radius * Math.cos(angle));
 						loc.setZ(loc.getZ() + radius * Math.sin(angle));
-						owner.spawnParticle(Particle.REDSTONE, loc, 0, result);
+						owner.spawnParticle(Particle.DUST, loc, 0, result);
 					}
 					
 					for (int i = 0; i < 4; i++) {

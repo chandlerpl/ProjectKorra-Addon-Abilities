@@ -101,7 +101,7 @@ public class Crumble extends EarthAbility implements ComboAbility, AddonAbility 
 					state++;
 					//break;
 				} else {
-					player.spawnParticle(Particle.SMOKE_NORMAL, tmpLoc, 0);
+					player.spawnParticle(Particle.SMOKE, tmpLoc, 0);
 				}
 			//}
 		} else if (state == 1) {
@@ -386,7 +386,7 @@ public class Crumble extends EarthAbility implements ComboAbility, AddonAbility 
 				public void run() {
 					for (Location loc : firstBlockMaterials.keySet()) {
 						loc.getBlock().setType(firstBlockMaterials.get(loc));
-						loc.getBlock().setData(firstBlockDatas.get(loc));
+						loc.getBlock().setBlockData(firstBlockDatas.get(loc));
 					}
 				}
 				

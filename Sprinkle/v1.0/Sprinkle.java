@@ -122,7 +122,7 @@ public class Sprinkle extends WaterAbility implements AddonAbility, ComboAbility
 				offset = randomPointInSphere().multiply(1);
 				offset.setY(-Math.random() * 3 + 1 - 2 * Math.max(Math.abs(offset.getX()), Math.abs(offset.getZ())) / this.sprinkleRadius);
 				loc = this.sprinkleStartLocation.clone().add(offset);
-				player.getWorld().spawnParticle(Particle.WATER_SPLASH, loc, 2);
+				player.getWorld().spawnParticle(Particle.SPLASH, loc, 2);
 			}
 
 			return true;

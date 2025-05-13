@@ -125,7 +125,7 @@ public class Mist extends WaterAbility implements AddonAbility, ComboAbility {
 			state = 0;
 			if(blueCharge) {
 				DustOptions dustOptions = new DustOptions(Color.fromRGB(158, 204, 255), 1);
-				player.getWorld().spawnParticle(Particle.REDSTONE, firstSourceLocation, 1, dustOptions);
+				player.getWorld().spawnParticle(Particle.DUST, firstSourceLocation, 1, dustOptions);
 			} else {
 				player.getWorld().spawnParticle(Particle.CLOUD, firstSourceLocation, 0);
 			}
@@ -148,7 +148,7 @@ public class Mist extends WaterAbility implements AddonAbility, ComboAbility {
 				secondSourceLocation.setZ(secondSourceLocation.getZ() + 2 * Math.sin(angle));
 				if(blueCharge) {
 					DustOptions dustOptions = new DustOptions(Color.fromRGB(158, 204, 255), 1);
-					player.getWorld().spawnParticle(Particle.REDSTONE, secondSourceLocation, 1, dustOptions);
+					player.getWorld().spawnParticle(Particle.DUST, secondSourceLocation, 1, dustOptions);
 				} else {
 					player.getWorld().spawnParticle(Particle.CLOUD, secondSourceLocation, 0);
 				}
@@ -166,8 +166,8 @@ public class Mist extends WaterAbility implements AddonAbility, ComboAbility {
 					fourthSourceLocation.setZ(fourthSourceLocation.getZ() + Math.sin(angle));
 					if(blueCharge) {
 						DustOptions dustOptions = new DustOptions(Color.fromRGB(158, 204, 255), 1);
-						player.getWorld().spawnParticle(Particle.REDSTONE, thirdSourceLocation, 1, dustOptions);
-						player.getWorld().spawnParticle(Particle.REDSTONE, fourthSourceLocation, 1, dustOptions);
+						player.getWorld().spawnParticle(Particle.DUST, thirdSourceLocation, 1, dustOptions);
+						player.getWorld().spawnParticle(Particle.DUST, fourthSourceLocation, 1, dustOptions);
 					} else {
 						player.getWorld().spawnParticle(Particle.CLOUD, thirdSourceLocation, 0);
 						player.getWorld().spawnParticle(Particle.CLOUD, fourthSourceLocation, 0);
@@ -229,11 +229,11 @@ public class Mist extends WaterAbility implements AddonAbility, ComboAbility {
 						player.getWorld().spawnParticle(Particle.CLOUD, b.getLocation(), 0);
 					} else if (x % 5 == 0) {
 						DustOptions dustOptions = new DustOptions(Color.fromRGB(158, 204, 255), 1);
-						player.getWorld().spawnParticle(Particle.REDSTONE, b.getLocation(), 1, dustOptions);
+						player.getWorld().spawnParticle(Particle.DUST, b.getLocation(), 1, dustOptions);
 					} else if (x % 2 == 0) { 
-						player.getWorld().spawnParticle(Particle.SPELL, b.getLocation(), 1);
+						player.getWorld().spawnParticle(Particle.WITCH, b.getLocation(), 1);
 					} else {
-						player.getWorld().spawnParticle(Particle.WATER_BUBBLE, b.getLocation(), 1);
+						player.getWorld().spawnParticle(Particle.BUBBLE, b.getLocation(), 1);
 					}
 				}
 			}

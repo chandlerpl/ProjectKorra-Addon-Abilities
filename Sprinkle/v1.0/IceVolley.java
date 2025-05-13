@@ -144,7 +144,7 @@ public class IceVolley extends IceAbility implements AddonAbility {
 				offset = Sprinkle.randomPointInSphere().normalize().multiply(this.radius / 1.5 + Math.random() - 0.5);
 				loc = this.centerLocation.clone().add(offset);
 				if (!GeneralMethods.isSolid(loc.getBlock())) {
-					player.getWorld().spawnParticle(Particle.WATER_WAKE, loc, 0);
+					player.getWorld().spawnParticle(Particle.DRIPPING_WATER, loc, 0);
 				}
 			}
 			
@@ -168,7 +168,7 @@ public class IceVolley extends IceAbility implements AddonAbility {
 			}
 			
 			for (Location location : this.iceLocations) {
-				player.getWorld().spawnParticle(Particle.REDSTONE, location, 0, this.iceOptions);
+				player.getWorld().spawnParticle(Particle.DUST, location, 0, this.iceOptions);
 			}
 			
 		} else if (this.abilityState == AbilityState.HOLDINGICE) {
@@ -178,7 +178,7 @@ public class IceVolley extends IceAbility implements AddonAbility {
 			}
 			
 			for (Location location : this.iceLocations) {
-				player.getWorld().spawnParticle(Particle.REDSTONE, location, 0, this.iceOptions);
+				player.getWorld().spawnParticle(Particle.DUST, location, 0, this.iceOptions);
 			}
 		} else if (this.abilityState == AbilityState.LAUNCH) {
 			Location loc;
@@ -220,7 +220,7 @@ public class IceVolley extends IceAbility implements AddonAbility {
 				
 			}
 			for (Location location : this.iceLocations) {
-				player.getWorld().spawnParticle(Particle.REDSTONE, location, 0, this.iceOptions);
+				player.getWorld().spawnParticle(Particle.DUST, location, 0, this.iceOptions);
 			}
 			tickCounter++;
 		}

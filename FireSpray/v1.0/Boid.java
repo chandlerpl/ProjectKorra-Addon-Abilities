@@ -1,6 +1,7 @@
 package me.hiro3.firespray;
 
 import org.bukkit.Location;
+import org.bukkit.Particle;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -76,8 +77,8 @@ public class Boid {
 				GeneralMethods.displayColoredParticle(this.location, "B6F9FF");
 		}
 		else
-			//player.getWorld().spawnParticle(Particle.FLAME, this.location, 0);
-			FireAbility.playFirebendingParticles(this.location, 1, 0.075f, 0.075f, 0.075f);
+			player.getWorld().spawnParticle(Particle.FLAME, this.location, 0);
+			//FireAbility.playFirebendingParticles(this.location, 1, 0.075f, 0.075f, 0.075f);
 		
 		for (Entity e : GeneralMethods.getEntitiesAroundPoint(this.location, 1.5)) {
 			if (e instanceof LivingEntity && !e.getUniqueId().equals(player.getUniqueId())) {

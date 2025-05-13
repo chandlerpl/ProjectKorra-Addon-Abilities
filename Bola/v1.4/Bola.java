@@ -165,7 +165,7 @@ public class Bola extends ChiAbility implements AddonAbility {
 								if (entity instanceof Player) {
 									if (hitCount[t] == 2) {
 										((LivingEntity) entity).addPotionEffect(
-												new PotionEffect(PotionEffectType.SLOW, SecondDuration, SecondSlowness),
+												new PotionEffect(PotionEffectType.SLOWNESS, SecondDuration, SecondSlowness),
 												true);
 										if (ChiPassive.willChiBlock(player, (Player) entity)) {
 											ChiPassive.blockChi((Player) entity);
@@ -173,7 +173,7 @@ public class Bola extends ChiAbility implements AddonAbility {
 										caught((Player) entity, 2);
 									} else {
 										((LivingEntity) entity).addPotionEffect(
-												new PotionEffect(PotionEffectType.SLOW, ThirdDuration, ThirdSlowness),
+												new PotionEffect(PotionEffectType.SLOWNESS, ThirdDuration, ThirdSlowness),
 												true);
 										ChiPassive.blockChi((Player) entity);
 										caught((Player) entity, 3);
@@ -192,7 +192,7 @@ public class Bola extends ChiAbility implements AddonAbility {
 						hitCount[3 - charges]++;
 						if (entity instanceof Player) {
 							((LivingEntity) entity).addPotionEffect(
-									new PotionEffect(PotionEffectType.SLOW, FirstDuration, FirstSlowness), true);
+									new PotionEffect(PotionEffectType.SLOWNESS, FirstDuration, FirstSlowness), true);
 							caught((Player) entity, 1);
 						} else {
 							((LivingEntity) entity).damage(FirstDamage);
@@ -202,11 +202,11 @@ public class Bola extends ChiAbility implements AddonAbility {
 				}
 				if (i == 5) {
 					DustOptions dustOptions = new DustOptions(Color.fromRGB(129, 198, 200), 1);
-					player.getWorld().spawnParticle(Particle.REDSTONE, loc[tmp][j], 1, dustOptions);
+					player.getWorld().spawnParticle(Particle.DUST, loc[tmp][j], 1, dustOptions);
 					//GeneralMethods.displayColoredParticle(loc[tmp][j], "81c6c8", 0, 0, 0);
 				} else {
 					DustOptions dustOptions = new DustOptions(Color.fromRGB(78, 92, 92), 1);
-					player.getWorld().spawnParticle(Particle.REDSTONE, loc[tmp][j], 1, dustOptions);
+					player.getWorld().spawnParticle(Particle.DUST, loc[tmp][j], 1, dustOptions);
 					//GeneralMethods.displayColoredParticle(loc[tmp][j], "4e5c5c", 0, 0, 0);
 				}
 			}
@@ -259,11 +259,11 @@ public class Bola extends ChiAbility implements AddonAbility {
 							pLoc[0][j].add(pDir[0][j].clone().multiply(0.2 * p));
 							if (i == 5) {
 								DustOptions dustOptions = new DustOptions(Color.fromRGB(129, 198, 200), 1);
-								player.getWorld().spawnParticle(Particle.REDSTONE, pLoc[0][j], 1, dustOptions);
+								player.getWorld().spawnParticle(Particle.DUST, pLoc[0][j], 1, dustOptions);
 								//GeneralMethods.displayColoredParticle(pLoc[0][j], "81c6c8", 0, 0, 0);
 							} else {
 								DustOptions dustOptions = new DustOptions(Color.fromRGB(78, 92, 92), 1);
-								player.getWorld().spawnParticle(Particle.REDSTONE, pLoc[0][j], 1, dustOptions);
+								player.getWorld().spawnParticle(Particle.DUST, pLoc[0][j], 1, dustOptions);
 								//GeneralMethods.displayColoredParticle(pLoc[0][j], "4e5c5c", 0, 0, 0);
 							}
 						}
@@ -274,7 +274,7 @@ public class Bola extends ChiAbility implements AddonAbility {
 						phase = -20;
 					}
 					for (PotionEffect effect : entity.getActivePotionEffects()) {
-						if (effect.getType().getName() == "SLOW") {
+						if (effect.getType().getName() == "SLOWNESS") {
 							flag = 1;
 						}
 					}
@@ -324,11 +324,11 @@ public class Bola extends ChiAbility implements AddonAbility {
 							pLoc[0][j].add(pDir[0][j].clone().multiply(0.2 * p));
 							if (i == 5) {
 								DustOptions dustOptions = new DustOptions(Color.fromRGB(129, 198, 200), 1);
-								player.getWorld().spawnParticle(Particle.REDSTONE, pLoc[0][j], 1, dustOptions);
+								player.getWorld().spawnParticle(Particle.DUST, pLoc[0][j], 1, dustOptions);
 								//GeneralMethods.displayColoredParticle(pLoc[0][j], "81c6c8", 0, 0, 0);
 							} else {
 								DustOptions dustOptions = new DustOptions(Color.fromRGB(78, 92, 92), 1);
-								player.getWorld().spawnParticle(Particle.REDSTONE, pLoc[0][j], 1, dustOptions);
+								player.getWorld().spawnParticle(Particle.DUST, pLoc[0][j], 1, dustOptions);
 								//GeneralMethods.displayColoredParticle(pLoc[0][j], "4e5c5c", 0, 0, 0);
 							}
 						}
@@ -339,7 +339,7 @@ public class Bola extends ChiAbility implements AddonAbility {
 						phase = -20;
 					}
 					for (PotionEffect effect : entity.getActivePotionEffects()) {
-						if (effect.getType().getName() == "SLOW") {
+						if (effect.getType().getName() == "SLOWNESS") {
 							flag = 1;
 						}
 					}
@@ -389,11 +389,11 @@ public class Bola extends ChiAbility implements AddonAbility {
 							pLoc[0][j].add(pDir[0][j].clone().multiply(0.2 * p));
 							if (i == 5) {
 								DustOptions dustOptions = new DustOptions(Color.fromRGB(129, 198, 200), 1);
-								player.getWorld().spawnParticle(Particle.REDSTONE, pLoc[0][j], 1, dustOptions);
+								player.getWorld().spawnParticle(Particle.DUST, pLoc[0][j], 1, dustOptions);
 								//GeneralMethods.displayColoredParticle(pLoc[0][j], "81c6c8", 0, 0, 0);
 							} else {
 								DustOptions dustOptions = new DustOptions(Color.fromRGB(78, 92, 92), 1);
-								player.getWorld().spawnParticle(Particle.REDSTONE, pLoc[0][j], 1, dustOptions);
+								player.getWorld().spawnParticle(Particle.DUST, pLoc[0][j], 1, dustOptions);
 								//GeneralMethods.displayColoredParticle(pLoc[0][j], "4e5c5c", 0, 0, 0);
 							}
 						}
@@ -404,7 +404,7 @@ public class Bola extends ChiAbility implements AddonAbility {
 						phase = -20;
 					}
 					for (PotionEffect effect : entity.getActivePotionEffects()) {
-						if (effect.getType().getName() == "SLOW") {
+						if (effect.getType().getName() == "SLOWNESS") {
 							flag = 1;
 						}
 					}

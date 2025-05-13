@@ -227,9 +227,9 @@ public class Mist extends WaterAbility implements AddonAbility, ComboAbility {
 					} else if (x % 5 == 0) {
 						GeneralMethods.displayColoredParticle(b.getLocation(), color, 0, 0, 0);
 					} else if (x % 2 == 0) { 
-						player.getWorld().spawnParticle(Particle.SPELL, b.getLocation(), 1);
+						player.getWorld().spawnParticle(Particle.WITCH, b.getLocation(), 1);
 					} else {
-						player.getWorld().spawnParticle(Particle.WATER_BUBBLE, b.getLocation(), 1);
+						player.getWorld().spawnParticle(Particle.BUBBLE, b.getLocation(), 1);
 					}
 				}
 			}

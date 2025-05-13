@@ -27,7 +27,7 @@ public class Tentacle {
 		
 		segments.add(new Segment(player, startLocation, segmentLength, 0, 0));
 //		for (int i = 1; i < maxSegmentAmount; i++) {
-//			//Açýyý 0 yapýnca NaN oluyor.
+//
 //			segments.add(new Segment(player, segments.get(i-1), segmentLength, 1, 0));
 //		}
 		

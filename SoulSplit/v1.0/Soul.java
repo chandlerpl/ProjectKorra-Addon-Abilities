@@ -106,8 +106,8 @@ public class Soul {
 					Location l = tmpLoc.clone().add(dir.clone().setY(0).multiply(0.2));
 					eyeLocLeft = l.clone().add(leftTmpVec.getX() * 0.4, 0.4, leftTmpVec.getZ() * 0.4);
 					eyeLocRight = l.clone().add(rightTmpVec.getX() * 0.4, 0.4, rightTmpVec.getZ() * 0.4);
-					owner.spawnParticle(Particle.REDSTONE, eyeLocLeft.getX(), eyeLocLeft.getY(), eyeLocLeft.getZ(), 0, 0.5, 0.5, 0.5, 1);
-					owner.spawnParticle(Particle.REDSTONE, eyeLocRight.getX(), eyeLocRight.getY(), eyeLocRight.getZ(), 0, 0.5, 0.5, 0.5, 1);
+					owner.spawnParticle(Particle.DUST, eyeLocLeft.getX(), eyeLocLeft.getY(), eyeLocLeft.getZ(), 0, 0.5, 0.5, 0.5, 1);
+					owner.spawnParticle(Particle.DUST, eyeLocRight.getX(), eyeLocRight.getY(), eyeLocRight.getZ(), 0, 0.5, 0.5, 0.5, 1);
 				}
 			} else {
 				owner.getWorld().spawnParticle(Particle.CLOUD, tmpLoc, 0);
@@ -280,7 +280,7 @@ public class Soul {
 						Location loc = getLoc().clone().add(0, 1, 0);
 						loc.setX(loc.getX() + 1.5 * Math.cos(angle));
 						loc.setZ(loc.getZ() + 1.5 * Math.sin(angle));
-						owner.spawnParticle(Particle.REDSTONE, loc.getX(), loc.getY(), loc.getZ(), 0, 0.5, 0.5, 0.5, 1);
+						owner.spawnParticle(Particle.DUST, loc.getX(), loc.getY(), loc.getZ(), 0, 0.5, 0.5, 0.5, 1);
 					}
 					phase += 2;
 				}
@@ -318,7 +318,7 @@ public class Soul {
 						Location loc = getLoc().clone().add(0, heights.get(i), 0);
 						loc.setX(loc.getX() + radius * Math.cos(angle));
 						loc.setZ(loc.getZ() + radius * Math.sin(angle));
-						owner.spawnParticle(Particle.REDSTONE, loc, 0, -1, 0.9, 0);
+						owner.spawnParticle(Particle.DUST, loc, 0, -1, 0.9, 0);
 					}
 					
 					for (int i = 0; i < 4; i++) {

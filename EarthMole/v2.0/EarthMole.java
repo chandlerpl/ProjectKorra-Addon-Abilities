@@ -116,14 +116,14 @@ public class EarthMole extends EarthAbility implements AddonAbility {
 		if (GeneralMethods.isSolid(block)) {
 			
 			if (block.getRelative(BlockFace.UP, 1).getType().equals(Material.SAND)) {
-				tbl = new TempBlock(block.getRelative(BlockFace.UP, 1), Material.SANDSTONE, (byte) 0);
+				tbl = new TempBlock(block.getRelative(BlockFace.UP, 1), Material.SANDSTONE);
 				tbl.setRevertTime(10000);
 			} else if (block.getRelative(BlockFace.UP, 1).getType().equals(Material.GRAVEL)) {
-				tbl = new TempBlock(block.getRelative(BlockFace.UP, 1), Material.STONE, (byte) 0);
+				tbl = new TempBlock(block.getRelative(BlockFace.UP, 1), Material.STONE);
 				tbl.setRevertTime(10000);
 			}
 			
-			tbl = new TempBlock(block, Material.AIR, (byte) 0);
+			tbl = new TempBlock(block, Material.AIR);
 			tbl.setRevertTime(10000);
 		}
 	}
@@ -169,7 +169,7 @@ public class EarthMole extends EarthAbility implements AddonAbility {
 					colorNo = 0;
 					particleLoc = block.getLocation().add(0.5, 0, 0.5);
 				}
-				tbl = new TempBlock(block, Material.AIR, (byte) 0);
+				tbl = new TempBlock(block, Material.AIR);
 				tbl.setRevertTime(50 * (15 * ((count / 30) + 1)));
 				chain = false;
 			}
@@ -180,29 +180,29 @@ public class EarthMole extends EarthAbility implements AddonAbility {
 		player.setVelocity(new Vector(0, Math.sqrt(count), 0).multiply(launchPower));
 		particles(particleLoc, colorNo);
 	}
-	
+
 	public void clearWay() {
 		TempBlock tbl;
 		Block block = player.getLocation().add(player.getLocation().getDirection().setY(0)).getBlock();
 		if (GeneralMethods.isSolid(block) && isEarthbendable(block)) {
-			tbl = new TempBlock(block, Material.AIR, (byte) 0);
+			tbl = new TempBlock(block, Material.AIR);
 			tbl.setRevertTime(blockRevertTime);
 		}
 		block = block.getRelative(BlockFace.UP, 1);
 		if (GeneralMethods.isSolid(block) && isEarthbendable(block)) {
-			
+
 			if (block.getRelative(BlockFace.UP, 1).getType().equals(Material.SAND)) {
-				tbl = new TempBlock(block.getRelative(BlockFace.UP, 1), Material.SANDSTONE, (byte) 0);
+				tbl = new TempBlock(block.getRelative(BlockFace.UP, 1), Material.SANDSTONE);
 				tbl.setRevertTime(blockRevertTime);
 			} else if (block.getRelative(BlockFace.UP, 1).getType().equals(Material.GRAVEL)) {
-				tbl = new TempBlock(block.getRelative(BlockFace.UP, 1), Material.STONE, (byte) 0);
+				tbl = new TempBlock(block.getRelative(BlockFace.UP, 1), Material.STONE);
 				tbl.setRevertTime(blockRevertTime);
 			}
-			
-			tbl = new TempBlock(block, Material.AIR, (byte) 0);
+
+			tbl = new TempBlock(block, Material.AIR);
 			tbl.setRevertTime(blockRevertTime);
 		}
-		
+
 		if(player.isOnGround())
 			player.setVelocity(player.getLocation().getDirection().setY(0).multiply(speed));
 	}
@@ -212,7 +212,7 @@ public class EarthMole extends EarthAbility implements AddonAbility {
 		TempBlock tbl;
 		
 		for (int i = 0; i < depth; i++) {
-			tbl = new TempBlock(block, Material.AIR, (byte) 0);
+			tbl = new TempBlock(block, Material.AIR);
 			tbl.setRevertTime(blockRevertTime);
 			block = block.getRelative(BlockFace.DOWN, 1);
 		}
@@ -262,7 +262,7 @@ public class EarthMole extends EarthAbility implements AddonAbility {
 			loc.setX(loc.getX() + r * Math.cos(angle1));
 			loc.setZ(loc.getZ() + r * Math.sin(angle1));
 			GeneralMethods.displayColoredParticle(loc, color, 0, 0, 0);
-			//player.getWorld().spawnParticle(Particle.REDSTONE, loc, 1, dustOptions);
+			//player.getWorld().spawnParticle(Particle.DUST, loc, 1, dustOptions);
 			angle += 10;
 			angle1 = Math.toRadians(angle);
 			r += tmp;

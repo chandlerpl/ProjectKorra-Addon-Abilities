@@ -262,7 +262,7 @@ public class EarthMole extends EarthAbility implements AddonAbility {
 			loc.setY(loc.getY() + 0.03);
 			loc.setX(loc.getX() + r * Math.cos(angle1));
 			loc.setZ(loc.getZ() + r * Math.sin(angle1));
-			player.getWorld().spawnParticle(Particle.REDSTONE, loc, 1, dustOptions);
+			player.getWorld().spawnParticle(Particle.DUST, loc, 1, dustOptions);
 			angle += 10;
 			angle1 = Math.toRadians(angle);
 			r += tmp;

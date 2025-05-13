@@ -131,7 +131,7 @@ public class SoulControl extends SpiritAbility implements AddonAbility {
 		dir.setY(0);
 		this.finalDirection = dir.clone();
 		do {
-			player.spawnParticle(Particle.REDSTONE, loc, 0, 0.7, 0.7, 0.7);
+			player.spawnParticle(Particle.DUST, loc, 0, 0.7, 0.7, 0.7);
 			loc.add(dir);
 		} while (loc.distance(from) <= this.moveDistance && loc.distance(from) <= from.distance(to));
 		this.finalLocation = loc;

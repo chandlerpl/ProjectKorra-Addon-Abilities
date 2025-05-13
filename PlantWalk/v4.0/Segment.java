@@ -73,7 +73,7 @@ public class Segment {
 		Vector direction = this.direction.clone().normalize().multiply((pointIncrement));
 		Location pointLocation = a.clone();
 		for (double i = 0; i < length; i+= pointIncrement) {
-            a.getWorld().spawnParticle(Particle.REDSTONE, pointLocation, 1, 0, 0, 0, this.dustOptions);
+            a.getWorld().spawnParticle(Particle.DUST, pointLocation, 1, 0, 0, 0, this.dustOptions);
             pointLocation.add(direction);
 		}
 	}

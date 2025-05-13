@@ -79,13 +79,13 @@ public class Boid {
 		if (fireSpray.blueFirePlayers.contains(player.getName())) {
 			//player.getWorld().spawnParticle(Particle.CRIT_MAGIC, this.location, 0);
 			if (Math.random() > 0.05)
-				player.getWorld().spawnParticle(Particle.REDSTONE, this.location, 1, color1);
+				player.getWorld().spawnParticle(Particle.DUST, this.location, 1, color1);
 			else
-				player.getWorld().spawnParticle(Particle.REDSTONE, this.location, 1, color2);
+				player.getWorld().spawnParticle(Particle.DUST, this.location, 1, color2);
 		}
 		else
-			//player.getWorld().spawnParticle(Particle.FLAME, this.location, 0);
-			FireAbility.playFirebendingParticles(this.location, 1, 0.075f, 0.075f, 0.075f);
+			player.getWorld().spawnParticle(Particle.FLAME, this.location, 0);
+			//FireAbility.playFirebendingParticles(this.location, 1, 0.075f, 0.075f, 0.075f);
 		
 		for (Entity e : GeneralMethods.getEntitiesAroundPoint(this.location, 1.5)) {
 			if (e instanceof LivingEntity && !e.getUniqueId().equals(player.getUniqueId())) {

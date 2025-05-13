@@ -162,7 +162,7 @@ public class Bola extends ChiAbility implements AddonAbility {
 								if (entity instanceof Player) {
 									if (hitCount[t] == 2) {
 										((LivingEntity) entity).addPotionEffect(
-												new PotionEffect(PotionEffectType.SLOW, SecondDuration, SecondSlowness),
+												new PotionEffect(PotionEffectType.SLOWNESS, SecondDuration, SecondSlowness),
 												true);
 										if (ChiPassive.willChiBlock(player, (Player) entity)) {
 											ChiPassive.blockChi((Player) entity);
@@ -170,7 +170,7 @@ public class Bola extends ChiAbility implements AddonAbility {
 										caught((Player) entity, 2);
 									} else {
 										((LivingEntity) entity).addPotionEffect(
-												new PotionEffect(PotionEffectType.SLOW, ThirdDuration, ThirdSlowness),
+												new PotionEffect(PotionEffectType.SLOWNESS, ThirdDuration, ThirdSlowness),
 												true);
 										ChiPassive.blockChi((Player) entity);
 										caught((Player) entity, 3);
@@ -189,7 +189,7 @@ public class Bola extends ChiAbility implements AddonAbility {
 						hitCount[3 - charges]++;
 						if (entity instanceof Player) {
 							((LivingEntity) entity).addPotionEffect(
-									new PotionEffect(PotionEffectType.SLOW, FirstDuration, FirstSlowness), true);
+									new PotionEffect(PotionEffectType.SLOWNESS, FirstDuration, FirstSlowness), true);
 							caught((Player) entity, 1);
 						} else {
 							((LivingEntity) entity).damage(FirstDamage);
@@ -263,7 +263,7 @@ public class Bola extends ChiAbility implements AddonAbility {
 						phase = -20;
 					}
 					for (PotionEffect effect : entity.getActivePotionEffects()) {
-						if (effect.getType().getName() == "SLOW") {
+						if (effect.getType().getName() == "SLOWNESS") {
 							flag = 1;
 						}
 					}
@@ -324,7 +324,7 @@ public class Bola extends ChiAbility implements AddonAbility {
 						phase = -20;
 					}
 					for (PotionEffect effect : entity.getActivePotionEffects()) {
-						if (effect.getType().getName() == "SLOW") {
+						if (effect.getType().getName() == "SLOWNESS") {
 							flag = 1;
 						}
 					}
@@ -385,7 +385,7 @@ public class Bola extends ChiAbility implements AddonAbility {
 						phase = -20;
 					}
 					for (PotionEffect effect : entity.getActivePotionEffects()) {
-						if (effect.getType().getName() == "SLOW") {
+						if (effect.getType().getName() == "SLOWNESS") {
 							flag = 1;
 						}
 					}
